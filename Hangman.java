@@ -16,6 +16,7 @@ public class Hangman extends ConsoleProgram {
 
     public void run() {
     	intializeWord();
+    	print(keyWord);
 		while (notGuessed()) { 
 			if (numGuesses < 0) break; 
 			printWord(); 
@@ -24,6 +25,13 @@ public class Hangman extends ConsoleProgram {
 		}
 	}
     
+    public void intializeWord() {
+    	keyWord = lexi.getWord(rgen.nextInt(0, lexi.getWordCount() - 1));
+    	for (int i = 0; i < keyWord.length(); i++) {
+    		keyWordCopy.add("-");
+    	}
+    }
+    
     public boolean notGuessed() {
     	String test = "";
     	for (int i = 0; i < keyWord.length(); i++) {
@@ -31,13 +39,6 @@ public class Hangman extends ConsoleProgram {
     	}
     	if (test.equals(keyWord)) return false;
     	else return true; 
-    }
-    
-    public void intializeWord() {
-    	keyWord = lexi.getWord(rgen.nextInt(0, lexi.getWordCount() - 1));
-    	for (int i = 0; i < keyWord.length(); i++) {
-    		keyWordCopy.add("-");
-    	}
     }
     
     public void printWord() {
