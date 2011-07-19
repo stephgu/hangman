@@ -15,24 +15,24 @@ import java.util.ArrayList;
 public class Hangman extends ConsoleProgram {
 
     public void run() {
+    	intializeWord();
 		while (notGuessed()) { 
 			if (numGuesses < 0) break; 
-			intializeWordCopy();
 			printWord(); 
 			askLetter();
 			checkWordForLetter();
-			
 		}
 	}
     
     public boolean notGuessed() {
+    	keyWord = lexi.getWord(rgen.nextInt(0, lexi.getWordCount() - 1));
     	for (int i = 0; i < keyWord.length(); i++) {
     		if (keyWordCopy.get(i).equals(keyWord.charAt(i)) == false) return true;
     	}
     	return false; 
     }
     
-    public void intializeWordCopy() {
+    public void intializeWord() {
     	for (int i = 0; i < keyWord.length(); i++) {
     		keyWordCopy.add("-");
     	}
@@ -64,17 +64,17 @@ public class Hangman extends ConsoleProgram {
     
     public void addLetterToCopy() {
     	int i = keyWord.indexOf(letter);
-    	keyWordCopy.set(i, letter);
+    	keyWordCopy.set(i, (char) letter);
     }
     
     /* Private instance variables */
     HangmanLexicon lexi = new HangmanLexicon(); 
     RandomGenerator rgen = RandomGenerator.getInstance();
     
-    String keyWord = lexi.getWord(rgen.nextInt(0, lexi.getWordCount() - 1));
+    String keyWord;
     String letter; 
     ArrayList<String> guessed = new ArrayList<String>();
-    ArrayList<String> keyWordCopy = new ArrayList<String>();
+    ArrayList<Character> keyWordCopy = new ArrayList<Character>();
     
     int numGuesses = 8;
 }
