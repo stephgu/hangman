@@ -26,7 +26,9 @@ public class Hangman extends ConsoleProgram {
 	}
     
     public boolean notGuessed() {
-    	return false; 
+    	for (int i = 0; i < keyWord.length(); i++) {
+    		keyWordCopy.get(i).equals(keyWord.);
+    	}
     }
     
     public void intializeWordCopy() {
@@ -47,12 +49,11 @@ public class Hangman extends ConsoleProgram {
     }
     
     public void checkWordForLetter() {
-    	int dex = keyWord.indexOf(letter);
-    	if (dex == -1) {
-    		println("There are no " + letter + "'s in the word.");
-    	} else {
+    	if (keyWord.contains(letter)) {
     		println("That guess is correct.");
     		addLetterToCopy();
+    	} else {
+    		println("There are no " + letter + "'s in the word.");
     	}
     }
     
