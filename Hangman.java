@@ -18,7 +18,10 @@ public class Hangman extends ConsoleProgram {
     	intializeWord();
     	println(keyWord);
 		while (notGuessed()) { 
-			if (numGuesses <= 0) break; 
+			if (numGuesses <= 0) {
+				println("You lose. The word was " + keyWord);
+				break; 
+			}
 			printWord(); 
 			askLetter();
 			checkWordForLetter();
@@ -38,7 +41,10 @@ public class Hangman extends ConsoleProgram {
     		test += keyWordCopy.get(i);
     	}
     	if (test.equals(keyWord)) return false;
-    	else return true; 
+    	else {
+    		println("You got it!");
+    		return true; 
+    	}
     }
     
     public void printWord() {
