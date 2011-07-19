@@ -46,13 +46,17 @@ public class Hangman extends ConsoleProgram {
     	for (int i = 0; i < keyWordCopy.size(); i++) {
     		print(keyWordCopy.get(i));
     	}
+    	println();
     	println("You have " + numGuesses + " guesses left.");
     }
     
     public void askLetter() {
     	letter = readLine("Guess a letter: ");
     	letter = letter.toUpperCase();
-    	if (letter.length() > 1) askLetter(); 
+    	if (letter.length() > 1) {
+    		println("That is an illegal guess.");
+    		askLetter(); 
+    	}
     	guessed.add(letter);
     }
     
