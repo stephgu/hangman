@@ -51,6 +51,7 @@ public class Hangman extends ConsoleProgram {
     public void askLetter() {
     	println("You have " + numGuesses + " guesses left.");
     	letter = readLine("Guess a letter: ");
+    	letter.toUpperCase();
     	guessed.add(letter);
     	numGuesses--;
     }
