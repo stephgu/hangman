@@ -25,16 +25,18 @@ public class Hangman extends ConsoleProgram {
 	}
     
     public boolean notGuessed() {
-    	keyWord = lexi.getWord(rgen.nextInt(0, lexi.getWordCount() - 1));
+    	String test = "";
     	for (int i = 0; i < keyWord.length(); i++) {
-    		if (keyWordCopy.get(i).equals(keyWord.charAt(i)) == false) return true;
+    		test += keyWordCopy.get(i);
     	}
-    	return false; 
+    	if (test.equals(keyWord)) return false;
+    	else return true; 
     }
     
     public void intializeWord() {
+    	keyWord = lexi.getWord(rgen.nextInt(0, lexi.getWordCount() - 1));
     	for (int i = 0; i < keyWord.length(); i++) {
-    		keyWordCopy.add("-");
+    		keyWordCopy.add("=");
     	}
     }
     
@@ -64,7 +66,7 @@ public class Hangman extends ConsoleProgram {
     
     public void addLetterToCopy() {
     	int i = keyWord.indexOf(letter);
-    	keyWordCopy.set(i, (char) letter);
+    	keyWordCopy.set(i, letter);
     }
     
     /* Private instance variables */
@@ -74,7 +76,7 @@ public class Hangman extends ConsoleProgram {
     String keyWord;
     String letter; 
     ArrayList<String> guessed = new ArrayList<String>();
-    ArrayList<Character> keyWordCopy = new ArrayList<Character>();
+    ArrayList<String> keyWordCopy = new ArrayList<String>();
     
     int numGuesses = 8;
 }
