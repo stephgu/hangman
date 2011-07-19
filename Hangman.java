@@ -16,7 +16,7 @@ public class Hangman extends ConsoleProgram {
 
     public void run() {
 		while (notGuessed()) { 
-			if (N_GUESSES < 0) break; 
+			if (numGuesses < 0) break; 
 			intializeWordCopy();
 			printWord(); 
 			askLetter();
@@ -29,30 +29,36 @@ public class Hangman extends ConsoleProgram {
     	return false; 
     }
     
-    public void printWord() {
-    	print("The word now looks like this: " + keyWordCopy);
-    	println();
-    }
-    
     public void intializeWordCopy() {
     	for (int i = 0; i < keyWord.length(); i++) {
     		keyWordCopy.add("-");
     	}
     }
     
-    public void askLetter() {
-    	println("You have " + N_GUESSES + " guesses left.");
-    	letter = readLine("Guess a letter: ");
-    	guessed.add(letter);
+    public void printWord() {
+    	println("The word now looks like this: " + keyWordCopy);
     }
     
-    public boolean checkWordForLetter() {
+    public void askLetter() {
+    	println("You have " + numGuesses + " guesses left.");
+    	letter = readLine("Guess a letter: ");
+    	guessed.add(letter);
+    	numGuesses--;
+    }
+    
+    public void checkWordForLetter() {
     	int dex = keyWord.indexOf(letter);
     	if (dex == -1) {
-    		return false; 
+    		println("There are no " + letter + "'s in the word.");
     	} else {
-    		return true; 
+    		println("That guess is correct.");
+    		addLetterToCopy();
     	}
+    }
+    
+    public void addLetterToCopy() {
+    	int i = keyWord.indexOf(letter);
+    	keyWordCopy.set(i, letter);
     }
     
     /* Private instance variables */
@@ -64,5 +70,5 @@ public class Hangman extends ConsoleProgram {
     ArrayList<String> guessed = new ArrayList<String>();
     ArrayList<String> keyWordCopy = new ArrayList<String>();
     
-    private static final int N_GUESSES = 8;
+    int numGuesses = 8;
 }
