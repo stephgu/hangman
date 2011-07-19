@@ -73,13 +73,16 @@ public class Hangman extends ConsoleProgram {
     		numGuesses--;
     	} else {
     		println("That guess is correct.");
-    		addLetterToCopy();
+    		checkForDoubleLetter();
+    		addLetterToCopy(dex);
     	}
     }
     
-    public void addLetterToCopy() {
-    	int i = keyWord.indexOf(letter);
-    	System.out.print(i);
+    public void checkForDoubleLetter() {
+    	
+    }
+    
+    public void addLetterToCopy(int i) {
     	keyWordCopy.set(i, letter);
     }
     
