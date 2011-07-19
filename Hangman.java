@@ -36,7 +36,7 @@ public class Hangman extends ConsoleProgram {
     public void intializeWord() {
     	keyWord = lexi.getWord(rgen.nextInt(0, lexi.getWordCount() - 1));
     	for (int i = 0; i < keyWord.length(); i++) {
-    		keyWordCopy.add("=");
+    		keyWordCopy.add("-");
     	}
     }
     
