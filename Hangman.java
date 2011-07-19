@@ -18,7 +18,7 @@ public class Hangman extends ConsoleProgram {
     	intializeWord();
     	println(keyWord);
 		while (notGuessed()) { 
-			if (numGuesses < 0) break; 
+			if (numGuesses <= 0) break; 
 			printWord(); 
 			askLetter();
 			checkWordForLetter();
