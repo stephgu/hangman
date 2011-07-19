@@ -52,15 +52,15 @@ public class Hangman extends ConsoleProgram {
     public void askLetter() {
     	println("You have " + numGuesses + " guesses left.");
     	letter = readLine("Guess a letter: ");
-    	letter.toUpperCase();
+    	letter = letter.toUpperCase();
     	guessed.add(letter);
-    	numGuesses--;
     }
     
     public void checkWordForLetter() {
     	int dex = keyWord.indexOf(letter);
     	if (dex == -1) {
     		println("There are no " + letter + "'s in the word.");
+    		numGuesses--;
     	} else {
     		println("That guess is correct.");
     		addLetterToCopy();
