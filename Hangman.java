@@ -40,11 +40,11 @@ public class Hangman extends ConsoleProgram {
     	for (int i = 0; i < keyWord.length(); i++) {
     		test += keyWordCopy.get(i);
     	}
-    	if (test.equals(keyWord)) return false;
-    	else {
+    	if (test.equals(keyWord)) {
     		println("You got it!");
-    		return true; 
+    		return false;
     	}
+    	else return true; 
     }
     
     public void printWord() {
