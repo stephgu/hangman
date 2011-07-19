@@ -27,8 +27,9 @@ public class Hangman extends ConsoleProgram {
     
     public boolean notGuessed() {
     	for (int i = 0; i < keyWord.length(); i++) {
-    		keyWordCopy.get(i).equals(keyWord.);
+    		if (keyWordCopy.get(i).equals(keyWord.charAt(i)) == false) return true;
     	}
+    	return false; 
     }
     
     public void intializeWordCopy() {
@@ -38,7 +39,11 @@ public class Hangman extends ConsoleProgram {
     }
     
     public void printWord() {
-    	println("The word now looks like this: " + keyWordCopy);
+    	print("The word now looks like this: ");
+    	for (int i = 0; i < keyWordCopy.size(); i++) {
+    		print(keyWordCopy.get(i));
+    	}
+    	println();
     }
     
     public void askLetter() {
