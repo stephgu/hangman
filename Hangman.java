@@ -79,6 +79,7 @@ public class Hangman extends ConsoleProgram {
     
     public void addLetterToCopy() {
     	int i = keyWord.indexOf(letter);
+    	System.out.print(i);
     	keyWordCopy.set(i, letter);
     }
     
