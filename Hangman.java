@@ -58,11 +58,12 @@ public class Hangman extends ConsoleProgram {
     }
     
     public void checkWordForLetter() {
-    	if (keyWord.contains(letter)) {
+    	int dex = keyWord.indexOf(letter);
+    	if (dex == -1) {
+    		println("There are no " + letter + "'s in the word.");
+    	} else {
     		println("That guess is correct.");
     		addLetterToCopy();
-    	} else {
-    		println("There are no " + letter + "'s in the word.");
     	}
     }
     
