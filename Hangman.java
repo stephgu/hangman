@@ -17,6 +17,7 @@ public class Hangman extends ConsoleProgram {
     public void run() {
 		while (notGuessed()) { 
 			if (N_GUESSES < 0) break; 
+			intializeWordCopy();
 			printWord(); 
 			askLetter();
 			checkWordForLetter();
@@ -29,11 +30,14 @@ public class Hangman extends ConsoleProgram {
     }
     
     public void printWord() {
-    	print("The word now looks like this: ");
+    	print("The word now looks like this: " + keyWordCopy);
+    	println();
+    }
+    
+    public void intializeWordCopy() {
     	for (int i = 0; i < keyWord.length(); i++) {
     		keyWordCopy.add("-");
     	}
-    	println();
     }
     
     public void askLetter() {
