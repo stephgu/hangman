@@ -76,6 +76,7 @@ public class Hangman extends ConsoleProgram {
     	}
     	println();
     	println("You have " + numGuesses + " guesses left.");
+    	canvas.displayWord("");
     }
     
     /**
