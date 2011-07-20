@@ -10,9 +10,14 @@ public class HangmanCanvas extends GCanvas {
 
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
-		/* You fill this in */
+		removeAll(); 
+		addScaffold(); 
 	}
-
+	
+	public void addScaffold() {
+		//GLine scaffVer = 
+	}
+	
 /**
  * Updates the word on the screen to correspond to the current
  * state of the game.  The argument string shows what letters have
