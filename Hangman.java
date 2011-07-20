@@ -85,6 +85,7 @@ public class Hangman extends ConsoleProgram {
     private void askLetter() {
     	letter = readLine("Guess a letter: ");
     	letter = letter.toUpperCase();
+    	letterch = charLetter();
     	//every time a letter is asked, reset the variable that tells whether there are multiple letters or not
     	multiLetters = false; 
     	//what to do with illegal inputs (multiple letters or nothing entered)
@@ -95,6 +96,9 @@ public class Hangman extends ConsoleProgram {
     	guessed.add(letter);
     }
     
+    private char charLetter() {
+    	return letter.charAt(0);
+    }
     /**
      * Checks whether the key word contains the letter user entered starting from the index specified. 
      * If there is not, takes one guess away and notifies user that their letter does not appear in the key word.
@@ -108,7 +112,7 @@ public class Hangman extends ConsoleProgram {
     		//makes sure following commands aren't being run if just checking for multiple letters 
     		if (multiLetters == false) {
     		println("There are no " + letter + "'s in the word.");
-    		canvas.noteIncorrectGuess('l');
+    		canvas.noteIncorrectGuess(letterch);
     		numGuesses--;
     		}
     	} else {
@@ -148,6 +152,7 @@ public class Hangman extends ConsoleProgram {
     
     static String keyWord;
     String letter; 
+    char letterch;
     ArrayList<String> guessed = new ArrayList<String>();
     static ArrayList<String> keyWordCopy = new ArrayList<String>();
     
