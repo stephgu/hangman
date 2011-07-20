@@ -15,14 +15,6 @@ public class HangmanCanvas extends GCanvas {
 		bodyCount = 0;
 		initializeStartGraphics();
 	}
-
-	private void updateWord() {
-		word = "";
-		ArrayList<String> temp = Hangman.keyWordCopy;
-		for (int i = 0; i < temp.size(); i++) {
-			word += temp.get(i);
-		}
-	}
 	
 	private void initializeStartGraphics() {
 		//init scaffold
@@ -88,6 +80,15 @@ public class HangmanCanvas extends GCanvas {
 		wordlab.setLabel(word);
 		add(wordlab);
 	}
+	
+	private void updateWord() {
+		word = "";
+		ArrayList<String> temp = Hangman.keyWordCopy;
+		for (int i = 0; i < temp.size(); i++) {
+			word += temp.get(i);
+		}
+		System.out.print("Secret word is: " + word);
+	}
 
 /**
  * Updates the display to correspond to an incorrect guess by the
@@ -96,27 +97,20 @@ public class HangmanCanvas extends GCanvas {
  * guesses that appears at the bottom of the window.
  */
 	public void noteIncorrectGuess(char letter) {
-		System.out.println("NOTE INCORRECT GUESS RUNS");
 		displayLetter(letter); 
 		addBodyPart(bodyCount++);
 	}
 	
 	private void displayLetter(char letter) {
-		System.out.println("DISPLAY LETTER RUNS");
 		guessed += letter; 
-		System.out.println("THIS IS THE LETTER + THE CHARACTER " + guessed);
 		guesslab.setLabel("Letters guessed: " + guessed);
 		add(guesslab);
 	}
 	
 	private void addBodyPart(int index) {
-		System.out.println("ADD BODY PART RUNS");
-		System.out.println("The body index is " + bodyCount);
 		switch (index) {
 		case 0: 
-			System.out.println("Head is about to be added");
 			add(head);
-			System.out.println("Head has been added.");
 			break;
 		case 1:
 			add(body);
@@ -127,11 +121,8 @@ public class HangmanCanvas extends GCanvas {
 			add(lowleftarm);
 			break;
 		case 3: 
-			System.out.println("Upper Right Arm is about to be added.");
 			add(uprightarm);
-			System.out.println("Lower Right Arm is about to be added.");
 			add(lowrightarm);
-			System.out.println("Lower Right Arm added.");
 			break;
 		case 4: 
 			add(leftleg);
