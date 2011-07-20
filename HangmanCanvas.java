@@ -15,7 +15,9 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	public void addScaffold() {
-		//GLine scaffVer = 
+		int x = getWidth()*0.25;
+		int y = getWidth()*0.25
+		GLine scaffVer = new GLine(x, y, x, y+360);
 	}
 	
 /**
