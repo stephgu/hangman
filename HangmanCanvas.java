@@ -106,8 +106,11 @@ public class HangmanCanvas extends GCanvas {
 			add(lowleftarm);
 			break;
 		case 3: 
+			System.out.println("Upper Right Arm is about to be added.");
 			add(uprightarm);
+			System.out.println("Lower Right Arm is about to be added.");
 			add(lowrightarm);
+			System.out.println("Lower Right Arm added.");
 			break;
 		case 4: 
 			add(leftleg);
