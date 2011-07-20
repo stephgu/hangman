@@ -60,6 +60,9 @@ public class Hangman extends ConsoleProgram {
     public void askLetter() {
     	letter = readLine("Guess a letter: ");
     	letter = letter.toUpperCase();
+    	//every time a letter is asked, reset the variable that tells whether there are multiple letters or not
+    	multiLetters = false; 
+    	//what to do with illegal inputs (multiple letters or nothing entered)
     	if (letter.length() > 1 || letter.equals("")) {
     		println("That is an illegal guess.");
     		askLetter(); 
