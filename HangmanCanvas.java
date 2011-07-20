@@ -11,9 +11,8 @@ public class HangmanCanvas extends GCanvas {
 	
 	public void reset() {
 		removeAll(); 
-		Hangman hm = new Hangman();
 		bodyCount = 0;
-		displayWord(hm.getWord());
+		displayWord(Hangman.keyWord);
 		addScaffold(); 
 		initializeStartGraphics();
 	}
