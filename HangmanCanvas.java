@@ -104,7 +104,7 @@ public class HangmanCanvas extends GCanvas {
 		System.out.println("DISPLAY LETTER RUNS");
 		guessed += letter; 
 		System.out.println("THIS IS THE LETTER + THE CHARACTER " + guessed);
-		guesslab.setLabel(guessed);
+		guesslab.setLabel("Letters guessed: " + guessed);
 		add(guesslab);
 	}
 	
