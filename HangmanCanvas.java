@@ -6,18 +6,25 @@
 
 import acm.graphics.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class HangmanCanvas extends GCanvas {
 	
 	public void reset() {
 		removeAll(); 
 		bodyCount = 0;
-		System.out.print(Hangman.keyWord);
+		initWord();
 		displayWord(Hangman.keyWord);
 		addScaffold(); 
 		initializeStartGraphics();
 	}
 
+	private void initWord() {
+		ArrayList<String> temp = Hangman.keyWordCopy;
+		for (int i = 0; i < temp.size(); i++) {
+			word += temp.get(i);
+		}
+	}
 	
 	private void initializeStartGraphics() {
 		//Init body parts coordinates 
@@ -75,7 +82,7 @@ public class HangmanCanvas extends GCanvas {
  * been guessed so far; unguessed letters are indicated by hyphens.
  */
 	public void displayWord(String word) {
-		System.out.print(word);
+		
 	}
 
 /**
