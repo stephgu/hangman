@@ -72,6 +72,7 @@ public class HangmanCanvas extends GCanvas {
  * guesses that appears at the bottom of the window.
  */
 	public void noteIncorrectGuess(char letter) {
+		System.out.print("NOTE INCORRECT GUESS RUNS");
 		displayLetter(letter); 
 		addBodyPart(bodyCount++);
 	}
