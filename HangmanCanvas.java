@@ -52,7 +52,7 @@ public class HangmanCanvas extends GCanvas {
 		add(guesslab);
 		add(wordlab);
 		//display word 
-		displayWord(word);
+		displayWord();
 		
 	}
 	
@@ -75,7 +75,7 @@ public class HangmanCanvas extends GCanvas {
  * state of the game.  The argument string shows what letters have
  * been guessed so far; unguessed letters are indicated by hyphens.
  */
-	public void displayWord(String temp) {
+	public void displayWord() {
 		updateWord();
 		wordlab.setLabel(word);
 		add(wordlab);
