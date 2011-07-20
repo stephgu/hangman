@@ -146,7 +146,7 @@ public class Hangman extends ConsoleProgram {
     HangmanLexicon lexi = new HangmanLexicon(); 
     RandomGenerator rgen = RandomGenerator.getInstance();
     
-    String keyWord;
+    public String keyWord;
     String letter; 
     ArrayList<String> guessed = new ArrayList<String>();
     ArrayList<String> keyWordCopy = new ArrayList<String>();
