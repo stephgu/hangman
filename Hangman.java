@@ -35,6 +35,7 @@ public class Hangman extends ConsoleProgram {
 			askLetter();
 			checkWordForLetter(keyWord.indexOf(letter));
 		}
+		restart();
 	}
     
     /**
@@ -144,9 +145,19 @@ public class Hangman extends ConsoleProgram {
     	return (keyWord.indexOf(letter, ++tdex));
     }
     
-    public String getWord() {
-    	return keyWord; 
+    private void restart() {
+    	String restart = readLine("Would you like to restart? ");
+    	restart = restart.toUpperCase();
+    	if (restart.charAt(0) == 'Y') {
+    		run();
+    	} else if (restart.charAt(0) == 'N') {
+    		println("It was fun playing hangman!");
+    	} else {
+    		println("Illegal response.");
+    		restart();
+    	}
     }
+    
     /* Private instance variables */
     private HangmanCanvas canvas; 
     HangmanLexicon lexi = new HangmanLexicon(); 
