@@ -51,6 +51,7 @@ public class HangmanCanvas extends GCanvas {
 		guesslab = new GLabel("Letters you have already guessed: ");
 		guesslab.setLocation(x, y + SCAFFOLD_HEIGHT + 200);
 		guesslab.setFont(new Font("Serif", Font.BOLD, 20));
+		add(guesslab);
 	}
 	/** Resets the display so that only the scaffold appears */
 	private void addScaffold() {
