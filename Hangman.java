@@ -149,7 +149,7 @@ public class Hangman extends ConsoleProgram {
     	String restart = readLine("Would you like to restart? ");
     	restart = restart.toUpperCase();
     	if (restart.charAt(0) == 'Y') {
-    		numGuesses = 0;
+    		numGuesses = 8;
     		multiLetters = false; 
     		keyWordCopy.clear();
     		run();
