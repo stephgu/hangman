@@ -13,17 +13,16 @@ public class HangmanCanvas extends GCanvas {
 		removeAll(); 
 		bodyCount = 0;
 		addScaffold(); 
-		initializeBodyParts();
-		initializeLabels();
+		initializeStartGraphics();
 	}
+
 	
-	private void initializeBodyParts() {
+	private void initializeStartGraphics() {
+		//Init body parts coordinates 
 		double y = getHeight()*0.25 + ROPE_LENGTH;
 		double x = getWidth()/2.0;
-		
 		head = new GOval(HEAD_RADIUS*2, HEAD_RADIUS*2);
 		head.setLocation(x - head.getWidth()/2.0, y);
-		
 		double startBodyY = y + head.getHeight();
 		double bodyEndY = startBodyY + BODY_LENGTH;
 		double leftarmEndX = x - UPPER_ARM_LENGTH;
@@ -32,7 +31,7 @@ public class HangmanCanvas extends GCanvas {
 		double hipStartX = x - HIP_WIDTH/2.0;
 		double hipEndX = hipStartX + HIP_WIDTH;
 		double leftlegEndY = bodyEndY + LEG_LENGTH;
-		
+		//Init body parts 
 		body = new GLine(x, startBodyY, x, bodyEndY);
 		hips = new GLine(hipStartX, bodyEndY, hipEndX, bodyEndY);
 		upleftarm = new GLine(x, armY, leftarmEndX, armY);
@@ -43,17 +42,14 @@ public class HangmanCanvas extends GCanvas {
 		rightleg = new GLine(hipEndX, bodyEndY, hipEndX, leftlegEndY);
 		leftfoot = new GLine(hipStartX, leftlegEndY, hipStartX - FOOT_LENGTH, leftlegEndY);
 		rightfoot = new GLine(hipEndX, leftlegEndY, hipEndX + FOOT_LENGTH, leftlegEndY);
-	}
-	
-	private void initializeLabels() {
-		double x = getWidth()/.25;
-		double y = getHeight()*0.25 + SCAFFOLD_HEIGHT + 200;
-		guesslab = new GLabel("Letters you have already guessed: ", 200, 200);
-		guesslab.setFont(new Font("Serif", Font.BOLD, 20));
-		System.out.println("Label about to be added");
+		//Labels 
+		wordlab = new GLabel(word);
+		wordlab.setLocation(x - wordlab.getWidth(), leftlegEndY + 100);
+		wordlab.setFont(new Font("Serif", Font.BOLD, 30));
+		guesslab = new GLabel("Letters guessed: ", 200, wordlab.getY() + wordlab.getHeight() + 50);
+		guesslab.setFont(new Font("Serif", Font.PLAIN, 20));
 		add(guesslab);
-		//guesslab.setVisible(true);
-		System.out.println("Label added");
+		
 	}
 	
 	/** Resets the display so that only the scaffold appears */
@@ -156,6 +152,7 @@ public class HangmanCanvas extends GCanvas {
 	
 	int bodyCount = 0; 
 	String guessed = ""; 
+	String word = "";
 	
 	/* Private vars */
 	GOval head; 
@@ -170,4 +167,5 @@ public class HangmanCanvas extends GCanvas {
 	GLine leftfoot;
 	GLine rightfoot;
 	GLabel guesslab;
+	GLabel wordlab;
 }
