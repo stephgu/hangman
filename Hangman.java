@@ -60,7 +60,7 @@ public class Hangman extends ConsoleProgram {
     public void askLetter() {
     	letter = readLine("Guess a letter: ");
     	letter = letter.toUpperCase();
-    	if (letter.length() > 1 || letter == null) {
+    	if (letter.length() > 1 || letter.equals("")) {
     		println("That is an illegal guess.");
     		askLetter(); 
     	}
