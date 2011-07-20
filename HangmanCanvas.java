@@ -45,7 +45,7 @@ public class HangmanCanvas extends GCanvas {
 		rightfoot = new GLine(hipEndX, leftlegEndY, hipEndX + FOOT_LENGTH, leftlegEndY);
 		//Labels 
 		wordlab = new GLabel(word);
-		wordlab.setLocation(200, 200);
+		wordlab.setLocation(x - wordlab.getWidth(), leftlegEndY + 100);
 		wordlab.setFont(new Font("Serif", Font.BOLD, 30));
 		guesslab = new GLabel("Letters guessed: ", x, wordlab.getY() + wordlab.getHeight() + 10);
 		guesslab.setFont(new Font("Serif", Font.PLAIN, 20));
@@ -75,7 +75,7 @@ public class HangmanCanvas extends GCanvas {
  * state of the game.  The argument string shows what letters have
  * been guessed so far; unguessed letters are indicated by hyphens.
  */
-	public void displayWord(String word) {
+	public void displayWord(String temp) {
 		updateWord();
 		wordlab.setLabel(word);
 		add(wordlab);
