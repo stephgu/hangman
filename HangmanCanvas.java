@@ -90,6 +90,7 @@ public class HangmanCanvas extends GCanvas {
 		GLabel guesslab = new GLabel(guessed);
 		guesslab.setLocation(x, y + SCAFFOLD_HEIGHT + 200);
 		guesslab.setFont(new Font("Serif", Font.BOLD, 20));
+		add(guesslab);
 	}
 	
 	private void addBodyPart(int index) {
