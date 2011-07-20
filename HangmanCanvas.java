@@ -161,5 +161,5 @@ public class HangmanCanvas extends GCanvas {
 	GLine rightleg;
 	GLine leftfoot;
 	GLine rightfoot;
-	GLabel guesslab = new GLabel(guessed);
+	GLabel guesslab = new GLabel("Letters you have already guessed: ");
 }
