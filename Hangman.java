@@ -69,8 +69,10 @@ public class Hangman extends ConsoleProgram {
     
     public void checkWordForLetter(int dex) {
     	if (dex == -1) {
+    		if (multiLetters == false) {
     		println("There are no " + letter + "'s in the word.");
     		numGuesses--;
+    		}
     	} else {
     		println("That guess is correct.");
     		addLetterToCopy(dex);
@@ -84,6 +86,7 @@ public class Hangman extends ConsoleProgram {
     }
     
     public int dexOfMultipleLetters(int tdex) {
+    	multiLetters = true; 
     	return (keyWord.indexOf(letter, ++tdex));
     }
     
@@ -97,4 +100,5 @@ public class Hangman extends ConsoleProgram {
     ArrayList<String> keyWordCopy = new ArrayList<String>();
     
     int numGuesses = 8;
+    boolean multiLetters = false; 
 }
