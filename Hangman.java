@@ -16,7 +16,7 @@ public class Hangman extends ConsoleProgram {
 
     public void run() {
     	intializeWord();
-    	println(keyWord);
+    	//println(keyWord);
 		while (notGuessed()) { 
 			if (numGuesses <= 0) {
 				println("You lose. The word was " + keyWord);
