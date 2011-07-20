@@ -10,6 +10,10 @@ import java.util.ArrayList;
 
 public class HangmanCanvas extends GCanvas {
 	
+	/**
+	 * Removes all graphic components from canvas, resets body count and guessed letter bank, intializes all the 
+	 * basic starting graphics of hangman (scaffold, letter bank, key word). 
+	 */
 	public void reset() {
 		removeAll(); 
 		bodyCount = 0;
@@ -17,6 +21,10 @@ public class HangmanCanvas extends GCanvas {
 		initializeStartGraphics();
 	}
 	
+	/**
+	 * Intializes all the body parts. Adds scaffold to screen. 
+	 * Inits and adds all the labels (key word, letter bank) to screen.  
+	 */
 	private void initializeStartGraphics() {
 		//init scaffold
 		addScaffold(); 
@@ -57,7 +65,9 @@ public class HangmanCanvas extends GCanvas {
 		
 	}
 	
-	/** Resets the display so that only the scaffold appears */
+	/**
+	 * Adds scaffold to canvas. 
+	 */
 	private void addScaffold() {
 		double x = getWidth()/2.0 - BEAM_LENGTH;
 		double y = getHeight()*0.25;
@@ -82,6 +92,9 @@ public class HangmanCanvas extends GCanvas {
 		add(wordlab);
 	}
 	
+	/**
+	 * Updates word by taking the key word copy and turning it into a string, which the displayWord then displays. 
+	 */
 	private void updateWord() {
 		word = "";
 		ArrayList<String> temp = Hangman.keyWordCopy;
@@ -101,12 +114,20 @@ public class HangmanCanvas extends GCanvas {
 		addBodyPart(bodyCount++);
 	}
 	
+	/**
+	 * Adds the most recently guessed letter to the guessed letter bank. 
+	 * @param letter The most recently guessed letter 
+	 */
 	private void displayLetter(char letter) {
 		guessed += letter; 
 		guesslab.setLabel("Letters guessed: " + guessed);
 		add(guesslab);
 	}
 	
+	/**
+	 * Adds the correct body part to the screen, where a number 0-7 corresponds to a specific body part.  
+	 * @param index The index of the correct body part. 
+	 */
 	private void addBodyPart(int index) {
 		switch (index) {
 		case 0: 
