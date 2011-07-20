@@ -15,15 +15,6 @@ public class HangmanCanvas extends GCanvas {
 		intializeBodyParts();
 	}
 	
-	private double[] coor() {
-		double x = getWidth()/2.0 - BEAM_LENGTH;
-		double y = getHeight()*0.25;
-		double endBeamX = x + BEAM_LENGTH;
-		double endRopeY = y + ROPE_LENGTH;
-		double[] result = {x, y, endBeamX, endRopeY};
-		return result;
-	}
-	
 	private void intializeBodyParts() {
 		double y = getHeight()*0.25;
 		double x = getWidth()/2.0;
@@ -116,15 +107,6 @@ public class HangmanCanvas extends GCanvas {
 		case 7: add(rightfoot);
 		}
 	}
-	
-	private void addHead() {
-		double y = coor()[3]; 
-		double x = getWidth()/2.0;
-		head = new GOval(HEAD_RADIUS*2, HEAD_RADIUS*2);
-		head.setLocation(x - head.getWidth()/2.0, y);
-		add(head);
-	}
-	
 	
 	/* Private vars */
 	GOval head; 
