@@ -53,10 +53,10 @@ public class HangmanCanvas extends GCanvas {
 
 	/** Resets the display so that only the scaffold appears */
 	private void addScaffold() {
-		double x = coor()[0];
-		double y = coor()[1]; 
-		double endBeamX = coor()[2];
-		double endRopeY = coor()[3];                   
+		double x = getWidth()/2.0 - BEAM_LENGTH;
+		double y = getHeight()*0.25;
+		double endBeamX = x + BEAM_LENGTH;
+		double endRopeY = y + ROPE_LENGTH;                   
 		GLine scaffpole = new GLine(x, y, x, y + SCAFFOLD_HEIGHT);
 		GLine scaffbeam = new GLine(x, y, endBeamX, y);
 		GLine rope = new GLine(endBeamX, y, endBeamX, endRopeY);
