@@ -13,7 +13,12 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Hangman extends ConsoleProgram {
-
+	
+	/**
+	 * Initializes the word, then while it has not yet been guessed and if the number of guesses is not zero, 
+	 * prints the word in the state of what the user has guessed, asks user to guess a letter, then checks to 
+	 * see if that letter is in the word and updates the letter accordingly. TL;DR it's hangman. 
+	 */
     public void run() {
     	intializeWord();
 		while (notGuessed()) { 
