@@ -24,7 +24,7 @@ public class Hangman extends ConsoleProgram {
 			}
 			printWord(); 
 			askLetter();
-			checkWordForLetter();
+			checkWordForLetter(keyWord.indexOf(letter));
 		}
 	}
     
@@ -67,25 +67,23 @@ public class Hangman extends ConsoleProgram {
     	guessed.add(letter);
     }
     
-    public void checkWordForLetter() {
-    	int dex = keyWord.indexOf(letter);
+    public void checkWordForLetter(int dex) {
     	if (dex == -1) {
     		println("There are no " + letter + "'s in the word.");
     		numGuesses--;
     	} else {
     		println("That guess is correct.");
     		addLetterToCopy(dex);
+    		int newdex = dexOfMultipleLetters(dex);
+    		checkWordForLetter(newdex);
     	}
     }
     
     public void addLetterToCopy(int i) {
-    	while (keyWordCopy.get(i).equals(letter)) {
-    		i = checkForMultipleLetters(i);
-    		keyWordCopy.set(i, letter);
-    	}
+    	keyWordCopy.set(i, letter)i;
     }
     
-    public int checkForMultipleLetters(int tdex) {
+    public int dexOfMultipleLetters(int tdex) {
     	return (keyWord.indexOf(letter, ++tdex));
     }
     
