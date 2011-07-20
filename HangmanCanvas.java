@@ -14,7 +14,6 @@ public class HangmanCanvas extends GCanvas {
 		removeAll(); 
 		bodyCount = 0;
 		initializeStartGraphics();
-		displayWord(word);
 	}
 
 	private void updateWord() {
@@ -60,6 +59,8 @@ public class HangmanCanvas extends GCanvas {
 		guesslab.setFont(new Font("Serif", Font.PLAIN, 20));
 		add(guesslab);
 		add(wordlab);
+		//display word 
+		displayWord(word);
 		
 	}
 	
