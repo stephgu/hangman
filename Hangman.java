@@ -80,7 +80,7 @@ public class Hangman extends ConsoleProgram {
     }
     
     public void addLetterToCopy(int i) {
-    	keyWordCopy.set(i, letter)i;
+    	keyWordCopy.set(i, letter);
     }
     
     public int dexOfMultipleLetters(int tdex) {
