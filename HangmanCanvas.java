@@ -8,7 +8,6 @@ import acm.graphics.*;
 
 public class HangmanCanvas extends GCanvas {
 
-/** Resets the display so that only the scaffold appears */
 	private double height() {
 		return getHeight();
 	}
@@ -22,6 +21,7 @@ public class HangmanCanvas extends GCanvas {
 		addScaffold(); 
 	}
 	
+	/** Resets the display so that only the scaffold appears */
 	public void addScaffold() {
 		GLine scaffpole = new GLine(x, y, x, y + SCAFFOLD_HEIGHT);
 		GLine scaffbeam = new GLine(x, y, endBeamX, y);
@@ -64,8 +64,8 @@ public class HangmanCanvas extends GCanvas {
 	private static final int FOOT_LENGTH = 28;
 	
 	/* x and y coordinates */
-	private static final double x = WIDTH/2.0 - BEAM_LENGTH;
-	double y = HEIGHT*0.25;
+	double x = width()/2.0 - BEAM_LENGTH;
+	double y = height()*0.25;
 	double endBeamX = x + BEAM_LENGTH;
 	double endRopeY = y + ROPE_LENGTH;
 
