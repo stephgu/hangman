@@ -17,7 +17,6 @@ public class Hangman extends ConsoleProgram {
 	public void init() {
 		canvas = new HangmanCanvas();
 		add(canvas);
-		canvas.reset();
 	}
 	/**
 	 * Initializes the word, then while it has not yet been guessed and if the number of guesses is not zero, 
@@ -25,6 +24,7 @@ public class Hangman extends ConsoleProgram {
 	 * see if that letter is in the word and updates the letter accordingly. TL;DR it's hangman. 
 	 */
     public void run() {
+    	canvas.reset();
     	intializeWord();
 		while (notGuessed()) { 
 			if (numGuesses <= 0) {
