@@ -68,13 +68,22 @@ public class HangmanCanvas extends GCanvas {
 	private void addBodyPart(int index) {
 		switch (index) {
 		case 0: add(head);
-		case 1: add(body);
-		case 2: add(leftarm);
-		case 3: add(rightarm);
+		case 1: {
+			add(body);
+			add(hips);
+		}
+		case 2: {
+			add(upleftarm);
+			add(lowleftarm);
+		}
+		case 3: {
+			add(uprightarm);
+			add(lowrightarm);
+		}
 		case 4: add(leftleg);
 		case 5: add(rightleg);
-		case 6: add(leetfoot);
-		case 7: add(rfoot);
+		case 6: add(leftfoot);
+		case 7: add(rightfoot);
 		}
 	}
 	
@@ -90,9 +99,16 @@ public class HangmanCanvas extends GCanvas {
 	/* Private vars */
 	GOval head; 
 	GLine body; 
-	GLine larm;
-	GLine lhand;
-	
+	GLine hips;
+	GLine upleftarm;
+	GLine lowleftarm;
+	GLine uprightarm;
+	GLine lowrightarm;
+	GLine leftleg;
+	GLine rightleg;
+	GLine leftfoot;
+	GLine rightfoot;
+
 /* Constants for the simple version of the picture (in pixels) */
 	private static final int SCAFFOLD_HEIGHT = 360;
 	private static final int BEAM_LENGTH = 144;
