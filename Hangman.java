@@ -95,6 +95,9 @@ public class Hangman extends ConsoleProgram {
     	if (letter.length() > 1 || letter.equals("")) {
     		println("That is an illegal guess.");
     		askLetter(); 
+    	} else if (guessed.contains(letter)) {
+    		println("You already guessed that letter.");
+    		askLetter();
     	}
     	guessed.add(letter);
     }
