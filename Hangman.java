@@ -80,12 +80,12 @@ public class Hangman extends ConsoleProgram {
     
     public void addLetterToCopy(int i) {
     	while (keyWordCopy.get(i).equals(letter)) {
-    		i = checkForDoubleLetter(i);
+    		i = checkForMultipleLetters(i);
+    		keyWordCopy.set(i, letter);
     	}
-    	keyWordCopy.set(i, letter);
     }
     
-    public int checkForDoubleLetter(int tdex) {
+    public int checkForMultipleLetters(int tdex) {
     	return (keyWord.indexOf(letter, ++tdex));
     }
     
