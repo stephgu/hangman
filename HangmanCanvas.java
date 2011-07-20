@@ -13,10 +13,11 @@ public class HangmanCanvas extends GCanvas {
 		removeAll(); 
 		bodyCount = 0;
 		addScaffold(); 
-		intializeBodyParts();
+		initializeBodyParts();
+		initializeLabels();
 	}
 	
-	private void intializeBodyParts() {
+	private void initializeBodyParts() {
 		double y = getHeight()*0.25 + ROPE_LENGTH;
 		double x = getWidth()/2.0;
 		
@@ -43,7 +44,14 @@ public class HangmanCanvas extends GCanvas {
 		leftfoot = new GLine(hipStartX, leftlegEndY, hipStartX - FOOT_LENGTH, leftlegEndY);
 		rightfoot = new GLine(hipEndX, leftlegEndY, hipEndX + FOOT_LENGTH, leftlegEndY);
 	}
-
+	
+	private void initializeLabels() {
+		double x = getWidth()/.25;
+		double y = getHeight()*0.25;
+		guesslab = new GLabel("Letters you have already guessed: ");
+		guesslab.setLocation(x, y + SCAFFOLD_HEIGHT + 200);
+		guesslab.setFont(new Font("Serif", Font.BOLD, 20));
+	}
 	/** Resets the display so that only the scaffold appears */
 	private void addScaffold() {
 		double x = getWidth()/2.0 - BEAM_LENGTH;
@@ -81,13 +89,9 @@ public class HangmanCanvas extends GCanvas {
 	
 	private void displayLetter(char letter) {
 		System.out.println("DISPLAY LETTER RUNS");
-		double x = getWidth()/.25;
-		double y = getHeight()*0.25;
 		guessed += letter; 
 		System.out.println("THIS IS THE LETTER + THE CHARACTER " + guessed);
 		guesslab.setLabel(guessed);
-		guesslab.setLocation(x, y + SCAFFOLD_HEIGHT + 200);
-		guesslab.setFont(new Font("Serif", Font.BOLD, 20));
 		add(guesslab);
 	}
 	
@@ -161,5 +165,5 @@ public class HangmanCanvas extends GCanvas {
 	GLine rightleg;
 	GLine leftfoot;
 	GLine rightfoot;
-	GLabel guesslab = new GLabel("Letters you have already guessed: ");
+	GLabel guesslab;
 }
