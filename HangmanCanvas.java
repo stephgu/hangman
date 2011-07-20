@@ -13,13 +13,13 @@ public class HangmanCanvas extends GCanvas {
 	public void reset() {
 		removeAll(); 
 		bodyCount = 0;
-		initWord();
-		displayWord(Hangman.keyWord);
+		updateWord();
+		displayWord(word);
 		addScaffold(); 
 		initializeStartGraphics();
 	}
 
-	private void initWord() {
+	private void updateWord() {
 		ArrayList<String> temp = Hangman.keyWordCopy;
 		for (int i = 0; i < temp.size(); i++) {
 			word += temp.get(i);
