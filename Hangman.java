@@ -24,8 +24,8 @@ public class Hangman extends ConsoleProgram {
 	 * see if that letter is in the word and updates the letter accordingly. TL;DR it's hangman. 
 	 */
     public void run() {
-    	canvas.reset();
     	intializeWord();
+    	canvas.reset();
 		while (notGuessed()) { 
 			if (numGuesses <= 0) {
 				println("You lose. The word was " + keyWord);
