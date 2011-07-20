@@ -28,16 +28,25 @@ public class HangmanCanvas extends GCanvas {
 		double y = coor()[3];
 		double x = getWidth()/2.0;
 		double startBodyY = y + head.getHeight();
+		double bodyEndY = startBodyY + BODY_LENGTH;
 		double leftarmEndX = x - UPPER_ARM_LENGTH;
 		double armY = startBodyY + ARM_OFFSET_FROM_HEAD;
 		double rightarmEndX = x + UPPER_ARM_LENGTH;
+		double hipStartX = x - HIP_WIDTH/2.0;
+		double hipEndX = hipStartX + HIP_WIDTH;
+		double leftlegEndY = bodyEndY + LEG_LENGTH; 
 		
 		head = new GOval(HEAD_RADIUS*2, HEAD_RADIUS*2);
 		head.setLocation(x - head.getWidth()/2.0, y);
-		body = new GLine(x, startBodyY, x, startBodyY + BODY_LENGTH);
+		body = new GLine(x, startBodyY, x, bodyEndY);
+		hips = new GLine(hipStartX, bodyEndY, hipEndX, bodyEndY);
 		upleftarm = new GLine(x, armY, leftarmEndX, armY);
 		lowleftarm = new GLine(leftarmEndX, armY, leftarmEndX, armY + LOWER_ARM_LENGTH);
 		uprightarm = new GLine(x, armY, rightarmEndX, armY);
+		leftleg = new GLine(hipStartX, bodyEndY, hipStartX, leftlegEndY);
+		rightleg = new GLine(hipEndX, bodyEndY, hipEndX, leftlegEndY);
+		leftfoot = new GLine(hipStartX, leftlegEndY, hipStartX - FOOT_LENGTH, leftlegEndY);
+		rightfoot = new GLine(hipEndX, leftlegEndY, hipEndX + FOOT_LENGTH, leftlegEndY);
 	}
 
 	/** Resets the display so that only the scaffold appears */
