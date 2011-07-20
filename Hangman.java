@@ -9,6 +9,7 @@ import acm.graphics.*;
 import acm.program.*;
 import acm.util.*;
 
+import java.applet.AudioClip;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -28,6 +29,7 @@ public class Hangman extends ConsoleProgram {
 	 * the hangman will be drawn. TL;DR it's hangman. 
 	 */
     public void run() {
+    	bgmusic.loop();
     	println("It's time to play Hangman!");
     	intializeWord();
     	canvas.reset();
@@ -179,6 +181,8 @@ public class Hangman extends ConsoleProgram {
     		restart();
     	}
     }
+    
+    AudioClip bgmusic = MediaTools.loadAudioClip("lume.au");
     
     /* Private instance variables */
     private HangmanCanvas canvas; 
