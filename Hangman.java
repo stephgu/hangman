@@ -40,7 +40,7 @@ public class Hangman extends ConsoleProgram {
     /**
      * Gets the secret word and makes a copy of it that consists of only dashes 
      */
-    public void intializeWord() {
+    private void intializeWord() {
     	keyWord = lexi.getWord(rgen.nextInt(0, lexi.getWordCount() - 1));
     	for (int i = 0; i < keyWord.length(); i++) {
     		keyWordCopy.add("-");
@@ -52,7 +52,7 @@ public class Hangman extends ConsoleProgram {
      * to create a string of the copy word. Compares this string to the actual key word string.  
      * @return true if the word has been guessed, false otherwise
      */
-    public boolean notGuessed() {
+    private boolean notGuessed() {
     	String test = "";
     	for (int i = 0; i < keyWord.length(); i++) {
     		test += keyWordCopy.get(i);
@@ -69,7 +69,7 @@ public class Hangman extends ConsoleProgram {
      * Prints what the key word copy looks like by going through each box of the array and print that. 
      * Also prints number of guesses left. 
      */
-    public void printWord() {
+    private void printWord() {
     	print("The word now looks like this: ");
     	for (int i = 0; i < keyWordCopy.size(); i++) {
     		print(keyWordCopy.get(i));
@@ -82,7 +82,7 @@ public class Hangman extends ConsoleProgram {
      * Prompts user for a letter. Turns letter to uppercase regardless of what user inputed. Changes multiLetter 
      * variable to false (details inside), and asks user to input again if their initial input was illegal. 
      */
-    public void askLetter() {
+    private void askLetter() {
     	letter = readLine("Guess a letter: ");
     	letter = letter.toUpperCase();
     	//every time a letter is asked, reset the variable that tells whether there are multiple letters or not
@@ -103,7 +103,7 @@ public class Hangman extends ConsoleProgram {
      * to check whether there are any letters beyond that index. 
      * @param dex The index (or lack thereof in which case it is -1) of the letter
      */
-    public void checkWordForLetter(int dex) {
+    private void checkWordForLetter(int dex) {
     	if (dex == -1) {
     		//makes sure following commands aren't being run if just checking for multiple letters 
     		if (multiLetters == false) {
@@ -123,7 +123,7 @@ public class Hangman extends ConsoleProgram {
      * Sets the most recent letter entered by user to the specified index
      * @param i The specified index of where the letter should go in the key word copy 
      */
-    public void addLetterToCopy(int i) {
+    private void addLetterToCopy(int i) {
     	keyWordCopy.set(i, letter);
     }
     
@@ -133,11 +133,14 @@ public class Hangman extends ConsoleProgram {
      * @param tdex The index where the previous multiple letter appeared.
      * @return The index where the next multiple letter appears. 
      */
-    public int dexOfMultipleLetters(int tdex) {
+    private int dexOfMultipleLetters(int tdex) {
     	multiLetters = true; 
     	return (keyWord.indexOf(letter, ++tdex));
     }
     
+    public String getWord() {
+    	return keyWord; 
+    }
     /* Private instance variables */
     private HangmanCanvas canvas; 
     HangmanLexicon lexi = new HangmanLexicon(); 
