@@ -91,6 +91,7 @@ public class HangmanCanvas extends GCanvas {
 	
 	private void addBodyPart(int index) {
 		System.out.println("ADD BODY PART RUNS");
+		System.out.println("The body index is " + bodyCount);
 		switch (index) {
 		case 0: 
 			System.out.println("Head is about to be added");
