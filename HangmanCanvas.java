@@ -13,9 +13,8 @@ public class HangmanCanvas extends GCanvas {
 	public void reset() {
 		removeAll(); 
 		bodyCount = 0;
-		displayWord(word);
-		addScaffold(); 
 		initializeStartGraphics();
+		displayWord(word);
 	}
 
 	private void updateWord() {
@@ -27,6 +26,8 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	private void initializeStartGraphics() {
+		//init scaffold
+		addScaffold(); 
 		//Init body parts coordinates 
 		double y = getHeight()*0.25 + ROPE_LENGTH;
 		double x = getWidth()/2.0;
