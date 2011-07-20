@@ -36,6 +36,7 @@ public class HangmanCanvas extends GCanvas {
 		upleftarm = new GLine(x, armY, leftarmEndX, armY);
 		lowleftarm = new GLine(leftarmEndX, armY, leftarmEndX, armY + LOWER_ARM_LENGTH);
 		uprightarm = new GLine(x, armY, rightarmEndX, armY);
+		lowrightarm = new GLine(rightarmEndX, armY, rightarmEndX, armY + LOWER_ARM_LENGTH);
 		leftleg = new GLine(hipStartX, bodyEndY, hipStartX, leftlegEndY);
 		rightleg = new GLine(hipEndX, bodyEndY, hipEndX, leftlegEndY);
 		leftfoot = new GLine(hipStartX, leftlegEndY, hipStartX - FOOT_LENGTH, leftlegEndY);
