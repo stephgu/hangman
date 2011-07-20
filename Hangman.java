@@ -77,7 +77,7 @@ public class Hangman extends ConsoleProgram {
     		numGuesses--;
     		}
     	} else {
-    		println("That guess is correct.");
+    		if (multiLetters == false) println("That guess is correct.");
     		addLetterToCopy(dex);
     		int newdex = dexOfMultipleLetters(dex);
     		checkWordForLetter(newdex);
