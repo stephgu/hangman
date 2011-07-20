@@ -105,6 +105,7 @@ public class Hangman extends ConsoleProgram {
      */
     public void checkWordForLetter(int dex) {
     	if (dex == -1) {
+    		//makes sure following commands aren't being run if just checking for multiple letters 
     		if (multiLetters == false) {
     		println("There are no " + letter + "'s in the word.");
     		canvas.noteIncorrectGuess('l');
