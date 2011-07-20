@@ -52,7 +52,7 @@ public class HangmanCanvas extends GCanvas {
 		guesslab.setFont(new Font("Serif", Font.BOLD, 20));
 		System.out.println("Label about to be added");
 		add(guesslab);
-		guesslab.setVisible(true);
+		//guesslab.setVisible(true);
 		System.out.println("Label added");
 	}
 	
