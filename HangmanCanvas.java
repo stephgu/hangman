@@ -5,6 +5,7 @@
  */
 
 import acm.graphics.*;
+import java.awt.*;
 
 public class HangmanCanvas extends GCanvas {
 	
@@ -53,6 +54,7 @@ public class HangmanCanvas extends GCanvas {
 		guessed += letter; 
 		GLabel guesslab = new GLabel(guessed);
 		guesslab.setLocation(x, y + SCAFFOLD_HEIGHT + 200);
+		guesslab.setFont(new Font("Serif", Font.BOLD, 20));
 	}
 
 /* Constants for the simple version of the picture (in pixels) */
