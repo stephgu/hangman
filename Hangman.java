@@ -149,7 +149,7 @@ public class Hangman extends ConsoleProgram {
     static String keyWord;
     String letter; 
     ArrayList<String> guessed = new ArrayList<String>();
-    ArrayList<String> keyWordCopy = new ArrayList<String>();
+    static ArrayList<String> keyWordCopy = new ArrayList<String>();
     
     int numGuesses = 8;
     boolean multiLetters = false; 
