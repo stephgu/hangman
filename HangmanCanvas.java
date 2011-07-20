@@ -12,6 +12,7 @@ public class HangmanCanvas extends GCanvas {
 	public void reset() {
 		removeAll(); 
 		addScaffold(); 
+		intializeBodyParts();
 	}
 	
 	private double[] coor() {
@@ -22,8 +23,25 @@ public class HangmanCanvas extends GCanvas {
 		double[] result = {x, y, endBeamX, endRopeY};
 		return result;
 	}
+	
+	private void intializeBodyParts() {
+		double y = coor()[3];
+		double x = getWidth()/2.0;
+		double startBodyY = y + head.getHeight();
+		double leftarmEndX = x - UPPER_ARM_LENGTH;
+		double armY = startBodyY + ARM_OFFSET_FROM_HEAD;
+		double rightarmEndX = x + UPPER_ARM_LENGTH;
+		
+		head = new GOval(HEAD_RADIUS*2, HEAD_RADIUS*2);
+		head.setLocation(x - head.getWidth()/2.0, y);
+		body = new GLine(x, startBodyY, x, startBodyY + BODY_LENGTH);
+		upleftarm = new GLine(x, armY, leftarmEndX, armY);
+		lowleftarm = new GLine(leftarmEndX, armY, leftarmEndX, armY + LOWER_ARM_LENGTH);
+		uprightarm = new GLine(x, armY, rightarmEndX, armY);
+	}
+
 	/** Resets the display so that only the scaffold appears */
-	public void addScaffold() {
+	private void addScaffold() {
 		double x = coor()[0];
 		double y = coor()[1]; 
 		double endBeamX = coor()[2];
