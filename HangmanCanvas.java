@@ -27,6 +27,10 @@ public class HangmanCanvas extends GCanvas {
 	private void intializeBodyParts() {
 		double y = coor()[3];
 		double x = getWidth()/2.0;
+		
+		head = new GOval(HEAD_RADIUS*2, HEAD_RADIUS*2);
+		head.setLocation(x - head.getWidth()/2.0, y);
+		
 		double startBodyY = y + head.getHeight();
 		double bodyEndY = startBodyY + BODY_LENGTH;
 		double leftarmEndX = x - UPPER_ARM_LENGTH;
@@ -34,10 +38,8 @@ public class HangmanCanvas extends GCanvas {
 		double rightarmEndX = x + UPPER_ARM_LENGTH;
 		double hipStartX = x - HIP_WIDTH/2.0;
 		double hipEndX = hipStartX + HIP_WIDTH;
-		double leftlegEndY = bodyEndY + LEG_LENGTH; 
+		double leftlegEndY = bodyEndY + LEG_LENGTH;
 		
-		head = new GOval(HEAD_RADIUS*2, HEAD_RADIUS*2);
-		head.setLocation(x - head.getWidth()/2.0, y);
 		body = new GLine(x, startBodyY, x, bodyEndY);
 		hips = new GLine(hipStartX, bodyEndY, hipEndX, bodyEndY);
 		upleftarm = new GLine(x, armY, leftarmEndX, armY);
