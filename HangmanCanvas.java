@@ -92,23 +92,35 @@ public class HangmanCanvas extends GCanvas {
 	private void addBodyPart(int index) {
 		System.out.println("ADD BODY PART RUNS");
 		switch (index) {
-		case 0: add(head);
-		case 1: {
+		case 0: 
+			add(head);
+			break;
+		case 1:
 			add(body);
 			add(hips);
-		}
-		case 2: {
+			break;
+		case 2: 
 			add(upleftarm);
 			add(lowleftarm);
-		}
-		case 3: {
+			break;
+		case 3: 
 			add(uprightarm);
 			add(lowrightarm);
-		}
-		case 4: add(leftleg);
-		case 5: add(rightleg);
-		case 6: add(leftfoot);
-		case 7: add(rightfoot);
+			break;
+		case 4: 
+			add(leftleg);
+			break;
+		case 5: 
+			add(rightleg);
+			break;
+		case 6: 
+			add(leftfoot);
+			break;
+		case 7: 
+			add(rightfoot);
+			break;
+		default: 
+			System.out.print("NO MORE BODY PARTS TO ADD MUTHA FUCKAAAAAAA");
 		}
 	}
 	
