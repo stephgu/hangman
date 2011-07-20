@@ -15,11 +15,9 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	public void addScaffold() {
-		double x = getWidth()*0.25;
-		double y = getHeight()*0.25;
 		GLine scaffpole = new GLine(x, y, x, y + SCAFFOLD_HEIGHT);
-		GLine scaffbeam = new GLine(x, y, x + BEAM_LENGTH, y);
-		GLine rope = new GLine(x + BEAM_LENGTH, y, x + BEAM_LENGTH, y + ROPE_LENGTH);
+		GLine scaffbeam = new GLine(x, y, endBeamX, y);
+		GLine rope = new GLine(endBeamX, y, endBeamX, endRopeY);
 		add(scaffpole);
 		add(scaffbeam);
 		add(rope);
@@ -56,5 +54,11 @@ public class HangmanCanvas extends GCanvas {
 	private static final int HIP_WIDTH = 36;
 	private static final int LEG_LENGTH = 108;
 	private static final int FOOT_LENGTH = 28;
+
+	/* x and y coordinates */
+	double x = getWidth()/2.0 - BEAM_LENGTH;
+	double y = getHeight()*0.25;
+	double endBeamX = x + BEAM_LENGTH;
+	double endRopeY = y + ROPE_LENGTH;
 
 }
