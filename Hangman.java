@@ -28,6 +28,7 @@ public class Hangman extends ConsoleProgram {
 	 * the hangman will be drawn. TL;DR it's hangman. 
 	 */
     public void run() {
+    	println("It's time to play Hangman!");
     	intializeWord();
     	canvas.reset();
 		while (notGuessed()) { 
