@@ -9,10 +9,17 @@ import acm.graphics.*;
 public class HangmanCanvas extends GCanvas {
 
 /** Resets the display so that only the scaffold appears */
+	private double height() {
+		return getHeight();
+	}
+	
+	private double width() {
+		return getWidth();
+	}
+	
 	public void reset() {
 		removeAll(); 
 		addScaffold(); 
-		System.out.print(HEIGHT + WIDTH);
 	}
 	
 	public void addScaffold() {
@@ -55,7 +62,7 @@ public class HangmanCanvas extends GCanvas {
 	private static final int HIP_WIDTH = 36;
 	private static final int LEG_LENGTH = 108;
 	private static final int FOOT_LENGTH = 28;
-
+	
 	/* x and y coordinates */
 	private static final double x = WIDTH/2.0 - BEAM_LENGTH;
 	double y = HEIGHT*0.25;
