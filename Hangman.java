@@ -151,6 +151,7 @@ public class Hangman extends ConsoleProgram {
     	if (restart.charAt(0) == 'Y') {
     		numGuesses = 0;
     		multiLetters = false; 
+    		keyWordCopy.clear();
     		run();
     	} else if (restart.charAt(0) == 'N') {
     		println("It was fun playing hangman!");
