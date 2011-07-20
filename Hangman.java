@@ -107,7 +107,7 @@ public class Hangman extends ConsoleProgram {
     	if (dex == -1) {
     		if (multiLetters == false) {
     		println("There are no " + letter + "'s in the word.");
-    		//canvas.noteIncorrectGuess('l');
+    		canvas.noteIncorrectGuess('l');
     		numGuesses--;
     		}
     	} else {
