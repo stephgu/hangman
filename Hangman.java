@@ -173,7 +173,7 @@ public class Hangman extends ConsoleProgram {
     		keyWordCopy.clear();
     		run();
     	} else if (restart.charAt(0) == 'N') {
-    		println("It was fun playing hangman!");
+    		println("Thanks for playing Hangman!");
     	} else {
     		println("Illegal response.");
     		restart();
