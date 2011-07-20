@@ -43,7 +43,16 @@ public class HangmanCanvas extends GCanvas {
  * guesses that appears at the bottom of the window.
  */
 	public void noteIncorrectGuess(char letter) {
-		/* You fill this in */
+		displayLetter(letter); 
+		addBodyPart(bodyCount++);
+	}
+	
+	private void displayLetter(char letter) {
+		double x = getWidth()/2.0 - BEAM_LENGTH;
+		double y = getHeight()*0.25;
+		guessed += letter; 
+		GLabel guesslab = new GLabel(guessed);
+		guesslab.setLocation(x, y + SCAFFOLD_HEIGHT + 200);
 	}
 
 /* Constants for the simple version of the picture (in pixels) */
@@ -59,7 +68,8 @@ public class HangmanCanvas extends GCanvas {
 	private static final int LEG_LENGTH = 108;
 	private static final int FOOT_LENGTH = 28;
 	
-	/* x and y coordinates */
+	int bodyCount = 0; 
+	String guessed = ""; 
 
 
 }
