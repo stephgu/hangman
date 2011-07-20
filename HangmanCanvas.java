@@ -12,6 +12,7 @@ public class HangmanCanvas extends GCanvas {
 	public void reset() {
 		removeAll(); 
 		addScaffold(); 
+		System.out.print(HEIGHT);
 	}
 	
 	public void addScaffold() {
