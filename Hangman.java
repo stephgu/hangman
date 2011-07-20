@@ -14,6 +14,9 @@ import java.util.ArrayList;
 
 public class Hangman extends ConsoleProgram {
 	
+	/**
+	 * Initializes canvas where man will be hanged. Adds canvas alongside the console program.
+	 */
 	public void init() {
 		canvas = new HangmanCanvas();
 		add(canvas);
@@ -21,7 +24,8 @@ public class Hangman extends ConsoleProgram {
 	/**
 	 * Initializes the word, then while it has not yet been guessed and if the number of guesses is not zero, 
 	 * prints the word in the state of what the user has guessed, asks user to guess a letter, then checks to 
-	 * see if that letter is in the word and updates the letter accordingly. TL;DR it's hangman. 
+	 * see if that letter is in the word and updates the letter accordingly. Also adds starts the canvas where 
+	 * the hangman will be drawn. TL;DR it's hangman. 
 	 */
     public void run() {
     	intializeWord();
@@ -69,7 +73,7 @@ public class Hangman extends ConsoleProgram {
     
     /**
      * Prints what the key word copy looks like by going through each box of the array and print that. 
-     * Also prints number of guesses left. 
+     * Prints the word on the canvas side of the screen. Also prints number of guesses left. 
      */
     private void printWord() {
     	print("The word now looks like this: ");
@@ -102,12 +106,19 @@ public class Hangman extends ConsoleProgram {
     	guessed.add(letter);
     }
     
+    /**
+     * Creates a character version of the letter so it is compatible with the noteIncorrectGuess() method of
+     * the HangmanCanvas class. 
+     * @return Character version of the most recent letter guessed. 
+     */
     private char charLetter() {
     	return letter.charAt(0);
     }
+    
     /**
      * Checks whether the key word contains the letter user entered starting from the index specified. 
-     * If there is not, takes one guess away and notifies user that their letter does not appear in the key word.
+     * If there is not, takes one guess away and notifies user that their letter does not appear in the key word
+     * and notes the incorrect guess on the canvas by adding the correct body part. 
      * If there is, checks whether there are multiple appearances of this letter in the key word by adding 1 to the 
      * index where the previous instance of the letter was found and calling itself with that new index
      * to check whether there are any letters beyond that index. 
@@ -148,6 +159,10 @@ public class Hangman extends ConsoleProgram {
     	return (keyWord.indexOf(letter, ++tdex));
     }
     
+    /**
+     * Asks user if they want to restart. If yes, resets number of guesses, multiple letters, and clears keyWordCopy.
+     * If no, print bye. Else, say it was an illegal response and ask to restart again. 
+     */
     private void restart() {
     	String restart = readLine("Would you like to restart? ");
     	restart = restart.toUpperCase();
