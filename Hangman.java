@@ -17,6 +17,7 @@ public class Hangman extends ConsoleProgram {
 	public void init() {
 		canvas = new HangmanCanvas();
 		add(canvas);
+		canvas.reset();
 	}
 	/**
 	 * Initializes the word, then while it has not yet been guessed and if the number of guesses is not zero, 
