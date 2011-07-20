@@ -20,6 +20,7 @@ public class HangmanCanvas extends GCanvas {
 	}
 
 	private void updateWord() {
+		word = "";
 		ArrayList<String> temp = Hangman.keyWordCopy;
 		for (int i = 0; i < temp.size(); i++) {
 			word += temp.get(i);
