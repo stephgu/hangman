@@ -11,6 +11,7 @@ public class HangmanCanvas extends GCanvas {
 	
 	public void reset() {
 		removeAll(); 
+		bodyCount = 0;
 		addScaffold(); 
 		intializeBodyParts();
 	}
