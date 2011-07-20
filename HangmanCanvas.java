@@ -87,7 +87,6 @@ public class HangmanCanvas extends GCanvas {
 		for (int i = 0; i < temp.size(); i++) {
 			word += temp.get(i);
 		}
-		System.out.print("Secret word is: " + word);
 	}
 
 /**
