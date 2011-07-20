@@ -45,7 +45,7 @@ public class HangmanCanvas extends GCanvas {
 		rightfoot = new GLine(hipEndX, leftlegEndY, hipEndX + FOOT_LENGTH, leftlegEndY);
 		//Labels 
 		wordlab = new GLabel(word);
-		wordlab.setLocation(getWidth()*.25, leftlegEndY + 100);
+		wordlab.setLocation(getWidth()*.25, leftlegEndY + 50);
 		wordlab.setFont(new Font("Serif", Font.BOLD, 30));
 		guesslab = new GLabel("Letters guessed: ", wordlab.getX(), wordlab.getY() + wordlab.getHeight() + 10);
 		guesslab.setFont(new Font("Serif", Font.PLAIN, 20));
