@@ -59,6 +59,7 @@ public class Hangman extends ConsoleProgram {
     	}
     	if (test.equals(keyWord)) {
     		printWord();
+    		canvas.displayWord();
     		println("You got it!");
     		return false;
     	}
@@ -76,7 +77,7 @@ public class Hangman extends ConsoleProgram {
     	}
     	println();
     	println("You have " + numGuesses + " guesses left.");
-    	canvas.displayWord("");
+    	canvas.displayWord();
     }
     
     /**
