@@ -25,7 +25,7 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	private void intializeBodyParts() {
-		double y = coor()[3];
+		double y = getHeight()*0.25;
 		double x = getWidth()/2.0;
 		
 		head = new GOval(HEAD_RADIUS*2, HEAD_RADIUS*2);
