@@ -14,12 +14,20 @@ public class HangmanCanvas extends GCanvas {
 		addScaffold(); 
 	}
 	
-	/** Resets the display so that only the scaffold appears */
-	public void addScaffold() {
+	private double[] coor() {
 		double x = getWidth()/2.0 - BEAM_LENGTH;
 		double y = getHeight()*0.25;
 		double endBeamX = x + BEAM_LENGTH;
 		double endRopeY = y + ROPE_LENGTH;
+		double[] result = {x, y, endBeamX, endRopeY};
+		return result;
+	}
+	/** Resets the display so that only the scaffold appears */
+	public void addScaffold() {
+		double x = coor()[0];
+		double y = coor()[1]; 
+		double endBeamX = coor()[2];
+		double endRopeY = coor()[3];                   
 		GLine scaffpole = new GLine(x, y, x, y + SCAFFOLD_HEIGHT);
 		GLine scaffbeam = new GLine(x, y, endBeamX, y);
 		GLine rope = new GLine(endBeamX, y, endBeamX, endRopeY);
@@ -56,7 +64,27 @@ public class HangmanCanvas extends GCanvas {
 		guesslab.setLocation(x, y + SCAFFOLD_HEIGHT + 200);
 		guesslab.setFont(new Font("Serif", Font.BOLD, 20));
 	}
-
+	
+	private void addBodyPart(int index) {
+		switch (index) {
+		case 0: addHead();
+		case 1: addBody();
+		case 2: addLeftArm();
+		case 3: addRightArm();
+		case 4: addLeftLeg();
+		case 5: addRightLeg();
+		case 6: addLeftFoot();
+		case 7: addRightFoot(); 
+		}
+	}
+	
+	private void addHead() {
+		double y = coor()[3]; 
+		double x = getWidth()/2.0;
+		GOval head = new GOval(HEAD_RADIUS*2, HEAD_RADIUS*2);
+		head.setLocation(x - head.getWidth()/2.0, y);
+		add(head);
+	}
 /* Constants for the simple version of the picture (in pixels) */
 	private static final int SCAFFOLD_HEIGHT = 360;
 	private static final int BEAM_LENGTH = 144;
