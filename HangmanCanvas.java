@@ -47,7 +47,7 @@ public class HangmanCanvas extends GCanvas {
 		wordlab = new GLabel(word);
 		wordlab.setLocation(x - wordlab.getWidth(), leftlegEndY + 100);
 		wordlab.setFont(new Font("Serif", Font.BOLD, 30));
-		guesslab = new GLabel("Letters guessed: ", 200, wordlab.getY() + wordlab.getHeight() + 50);
+		guesslab = new GLabel("Letters guessed: ", x, wordlab.getY() + wordlab.getHeight() + 50);
 		guesslab.setFont(new Font("Serif", Font.PLAIN, 20));
 		add(guesslab);
 		add(wordlab);
