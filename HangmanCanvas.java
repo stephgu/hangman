@@ -13,7 +13,7 @@ public class HangmanCanvas extends GCanvas {
 	public void reset() {
 		removeAll(); 
 		bodyCount = 0;
-		//word = "";
+		guessed = ""; 
 		initializeStartGraphics();
 	}
 	
