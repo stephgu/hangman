@@ -78,6 +78,7 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	private void displayLetter(char letter) {
+		System.out.print("DISPLAY LETTER RUNS");
 		double x = getWidth()/.25;
 		double y = getHeight()*0.25;
 		guessed += letter; 
@@ -88,6 +89,7 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	private void addBodyPart(int index) {
+		System.out.print("ADD BODY PART RUNS");
 		switch (index) {
 		case 0: add(head);
 		case 1: {
