@@ -56,8 +56,8 @@ public class HangmanCanvas extends GCanvas {
 	private static final int FOOT_LENGTH = 28;
 
 	/* x and y coordinates */
-	double x = getWidth()/2.0 - BEAM_LENGTH;
-	double y = getHeight()*0.25;
+	private static final double x = WIDTH/2.0 - BEAM_LENGTH;
+	double y = HEIGHT*0.25;
 	double endBeamX = x + BEAM_LENGTH;
 	double endRopeY = y + ROPE_LENGTH;
 
