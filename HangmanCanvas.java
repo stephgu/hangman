@@ -48,7 +48,7 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	private void displayLetter(char letter) {
-		double x = getWidth()/2.0 - BEAM_LENGTH;
+		double x = getWidth()/.25;
 		double y = getHeight()*0.25;
 		guessed += letter; 
 		GLabel guesslab = new GLabel(guessed);
