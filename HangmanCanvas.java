@@ -72,24 +72,25 @@ public class HangmanCanvas extends GCanvas {
  * guesses that appears at the bottom of the window.
  */
 	public void noteIncorrectGuess(char letter) {
-		System.out.print("NOTE INCORRECT GUESS RUNS");
+		System.out.println("NOTE INCORRECT GUESS RUNS");
 		displayLetter(letter); 
 		addBodyPart(bodyCount++);
 	}
 	
 	private void displayLetter(char letter) {
-		System.out.print("DISPLAY LETTER RUNS");
+		System.out.println("DISPLAY LETTER RUNS");
 		double x = getWidth()/.25;
 		double y = getHeight()*0.25;
 		guessed += letter; 
-		GLabel guesslab = new GLabel(guessed);
+		System.out.println("THIS IS THE LETTER + THE CHARACTER " + guessed);
+		guesslab.setLabel(guessed);
 		guesslab.setLocation(x, y + SCAFFOLD_HEIGHT + 200);
 		guesslab.setFont(new Font("Serif", Font.BOLD, 20));
 		add(guesslab);
 	}
 	
 	private void addBodyPart(int index) {
-		System.out.print("ADD BODY PART RUNS");
+		System.out.println("ADD BODY PART RUNS");
 		switch (index) {
 		case 0: add(head);
 		case 1: {
@@ -123,6 +124,7 @@ public class HangmanCanvas extends GCanvas {
 	GLine rightleg;
 	GLine leftfoot;
 	GLine rightfoot;
+	GLabel guesslab;
 
 /* Constants for the simple version of the picture (in pixels) */
 	private static final int SCAFFOLD_HEIGHT = 360;
@@ -139,6 +141,4 @@ public class HangmanCanvas extends GCanvas {
 	
 	int bodyCount = 0; 
 	String guessed = ""; 
-
-
 }
