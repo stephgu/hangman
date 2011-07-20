@@ -12,6 +12,7 @@ public class HangmanCanvas extends GCanvas {
 	public void reset() {
 		removeAll(); 
 		bodyCount = 0;
+		displayWord();
 		addScaffold(); 
 		initializeStartGraphics();
 	}
@@ -73,7 +74,10 @@ public class HangmanCanvas extends GCanvas {
  * been guessed so far; unguessed letters are indicated by hyphens.
  */
 	public void displayWord(String word) {
-		/* You fill this in */
+		Hangman hm = new Hangman(); 
+		word = hm.getWord(); 
+		System.out.print(word);
+		//display();
 	}
 
 /**
