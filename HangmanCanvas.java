@@ -126,19 +126,6 @@ public class HangmanCanvas extends GCanvas {
 		}
 	}
 	
-	/* Private vars */
-	GOval head; 
-	GLine body; 
-	GLine hips;
-	GLine upleftarm;
-	GLine lowleftarm;
-	GLine uprightarm;
-	GLine lowrightarm;
-	GLine leftleg;
-	GLine rightleg;
-	GLine leftfoot;
-	GLine rightfoot;
-	GLabel guesslab;
 
 /* Constants for the simple version of the picture (in pixels) */
 	private static final int SCAFFOLD_HEIGHT = 360;
@@ -155,4 +142,18 @@ public class HangmanCanvas extends GCanvas {
 	
 	int bodyCount = 0; 
 	String guessed = ""; 
+	
+	/* Private vars */
+	GOval head; 
+	GLine body; 
+	GLine hips;
+	GLine upleftarm;
+	GLine lowleftarm;
+	GLine uprightarm;
+	GLine lowrightarm;
+	GLine leftleg;
+	GLine rightleg;
+	GLine leftfoot;
+	GLine rightfoot;
+	GLabel guesslab = new GLabel(guessed);
 }
