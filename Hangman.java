@@ -95,7 +95,6 @@ public class Hangman extends ConsoleProgram {
     private void askLetter() {
     	letter = readLine("Guess a letter: ");
     	letter = letter.toUpperCase();
-    	letterch = charLetter();
     	//every time a letter is asked, reset the variable that tells whether there are multiple letters or not
     	multiLetters = false; 
     	//what to do with illegal inputs (multiple letters or nothing entered)
@@ -106,6 +105,7 @@ public class Hangman extends ConsoleProgram {
     		println("You already guessed that letter.");
     		askLetter();
     	}
+    	letterch = charLetter();
     	guessed.add(letter);
     }
     
