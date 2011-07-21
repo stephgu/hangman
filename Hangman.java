@@ -172,6 +172,7 @@ public class Hangman extends ConsoleProgram {
     	if (restart.charAt(0) == 'Y') {
     		numGuesses = 8;
     		multiLetters = false; 
+    		guessed.clear();
     		keyWordCopy.clear();
     		run();
     	} else if (restart.charAt(0) == 'N') {
